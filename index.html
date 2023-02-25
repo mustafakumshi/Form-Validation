@@ -8,6 +8,64 @@
     <title>Form Validation | Mustafa</title>
   </head>
   <body>
-    <script src="script.js"></script>
+    <div class="container">
+      <div class="header">
+        <h2>REGISTERATION FORM</h2>
+      </div>
+      <form id="form" class="form">
+        <div class="form-control">
+          <label>Username</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter your full name"
+            autocomplete="off"
+          />
+          <small>Error Msg</small>
+        </div>
+        <div class="form-control">
+          <label>Email</label>
+          <input
+            type="text"
+            id="email"
+            placeholder="Enter your email id"
+            autocomplete="off"
+          />
+          <small>Error Msg</small>
+        </div>
+        <div class="form-control">
+          <label>Phone Number</label>
+          <input
+            type="number"
+            id="phone-number"
+            placeholder="Enter your phone number"
+            autocomplete="off"
+          />
+          <small>Error Msg</small>
+        </div>
+        <div class="form-control">
+          <label>Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            autocomplete="off"
+          />
+          <small>Error Msg</small>
+        </div>
+        <div class="form-control">
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Enter your password again"
+            autocomplete="off"
+          />
+          <small>Error Msg</small>
+        </div>
+        <input type="submit" value="submit" class="btn" />
+      </form>
+      <script src="script.js"></script>
+    </div>
   </body>
 </html>

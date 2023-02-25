@@ -3,3 +3,89 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 600px;
+}
+
+.header {
+  background: blueviolet;
+  padding: 30px 0;
+}
+
+.header h2 {
+  color: white;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.form {
+  padding: 40px;
+}
+
+.form-control {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-control input {
+  width: 100%;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  display: block;
+  font-size: 14px;
+  padding: 12px;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: black;
+}
+
+.form-control.success input {
+  border-color: rgb(7, 139, 44);
+}
+
+.form-control.error input {
+  border-color: red;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-control small {
+  color: red;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+.form .btn {
+  background: blueviolet;
+  border: none;
+  color: white;
+  font-size: 20px;
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  margin-left: 180px;
+  cursor: pointer;
+}
