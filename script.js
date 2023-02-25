@@ -12,6 +12,26 @@ form.addEventListener("submit", (event) => {
   validate();
 });
 
+username.addEventListener("input", () => {
+  validate();
+});
+
+email.addEventListener("input", () => {
+  validate();
+});
+
+phoneNumber.addEventListener("input", () => {
+  validate();
+});
+
+password.addEventListener("input", () => {
+  validate();
+});
+
+confirmPassword.addEventListener("input", () => {
+  validate();
+});
+
 const isEmail = (emailVal) => {
   let atSymbol = emailVal.indexOf("@");
   if (atSymbol < 1) return false;
