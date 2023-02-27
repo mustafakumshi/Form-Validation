@@ -9,27 +9,31 @@ const confirmPassword = document.getElementById("confirm-password");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  validate();
+  validate("username");
+  validate("email");
+  validate("phoneNumber");
+  validate("password");
+  validate("confirmPassword");
 });
 
 username.addEventListener("input", () => {
-  validate();
+  validate("username");
 });
 
 email.addEventListener("input", () => {
-  validate();
+  validate("email");
 });
 
 phoneNumber.addEventListener("input", () => {
-  validate();
+  validate("phoneNumber");
 });
 
 password.addEventListener("input", () => {
-  validate();
+  validate("password");
 });
 
 confirmPassword.addEventListener("input", () => {
-  validate();
+  validate("confirmPassword");
 });
 
 const isEmail = (emailVal) => {
@@ -41,51 +45,61 @@ const isEmail = (emailVal) => {
   return true;
 };
 
-const validate = () => {
+const validate = (field) => {
   const usernameVal = username.value.trim();
   const emailVal = email.value.trim();
   const phoneNumberVal = phoneNumber.value.trim();
   const passwordVal = password.value.trim();
   const confirmPasswordVal = confirmPassword.value.trim();
 
-  if (usernameVal === "") {
-    setErrorMsg(username, "Username cannot be blank");
-  } else if (usernameVal.length <= 4) {
-    setErrorMsg(username, "Minimum 5 characters requiered");
-  } else {
-    setSuccessMsg(username);
-  }
-
-  if (emailVal === "") {
-    setErrorMsg(email, "Email cannot be blank");
-  } else if (!isEmail(emailVal)) {
-    setErrorMsg(email, "Not a valid email");
-  } else {
-    setSuccessMsg(email);
-  }
-
-  if (phoneNumberVal === "") {
-    setErrorMsg(phoneNumber, "Phone Number cannot be blank");
-  } else if (phoneNumberVal.length !== 10) {
-    setErrorMsg(phoneNumber, "Not a valid Phone Number");
-  } else {
-    setSuccessMsg(phoneNumber);
-  }
-
-  if (passwordVal === "") {
-    setErrorMsg(password, "Password cannot be blank");
-  } else if (passwordVal.length <= 5) {
-    setErrorMsg(password, "Minimum 6 Characters");
-  } else {
-    setSuccessMsg(password);
-  }
-
-  if (confirmPasswordVal === "") {
-    setErrorMsg(confirmPassword, "Confirm Password cannot be blank");
-  } else if (confirmPasswordVal !== passwordVal) {
-    setErrorMsg(confirmPassword, "Passwords do not Match");
-  } else {
-    setSuccessMsg(confirmPassword);
+  switch (field) {
+    case "username":
+      if (usernameVal === "") {
+        setErrorMsg(username, "Username cannot be blank");
+      } else if (usernameVal.length <= 4) {
+        setErrorMsg(username, "Minimum 5 characters requiered");
+      } else {
+        setSuccessMsg(username);
+      }
+      break;
+    case "email":
+      if (emailVal === "") {
+        setErrorMsg(email, "Email cannot be blank");
+      } else if (!isEmail(emailVal)) {
+        setErrorMsg(email, "Not a valid email");
+      } else {
+        setSuccessMsg(email);
+      }
+      break;
+    case "phoneNumber":
+      if (phoneNumberVal === "") {
+        setErrorMsg(phoneNumber, "Phone Number cannot be blank");
+      } else if (phoneNumberVal.length !== 10) {
+        setErrorMsg(phoneNumber, "Not a valid Phone Number");
+      } else {
+        setSuccessMsg(phoneNumber);
+      }
+      break;
+    case "password":
+      if (passwordVal === "") {
+        setErrorMsg(password, "Password cannot be blank");
+      } else if (passwordVal.length <= 5) {
+        setErrorMsg(password, "Minimum 6 Characters");
+      } else {
+        setSuccessMsg(password);
+      }
+      break;
+    case "confirmPassword":
+      if (confirmPasswordVal === "") {
+        setErrorMsg(confirmPassword, "Confirm Password cannot be blank");
+      } else if (confirmPasswordVal !== passwordVal) {
+        setErrorMsg(confirmPassword, "Passwords do not Match");
+      } else {
+        setSuccessMsg(confirmPassword);
+      }
+      break;
+    default:
+      break;
   }
 };
 
